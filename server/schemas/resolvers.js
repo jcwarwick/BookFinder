@@ -13,6 +13,9 @@ const resolvers = {
 
     Mutation: {
         addUser: async (_, { username, email, password }) => {
+            console.log(username)
+            console.log(email)
+            console.log(password)
             const user = await User.create({ username, email, password });
             if (!user) {
                 throw new Error('Something went wrong during user creation');
